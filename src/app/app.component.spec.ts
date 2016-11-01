@@ -5,14 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DrunkIdeaComponent } from './drunk-idea/drunk-idea.component';
+import { NotificationComponent } from './notification/notification.component';
 import { IdeaService } from './idea.service';
+import { NotificationService } from './notification.service';
 
 describe('App: DrunkPatents', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        DrunkIdeaComponent
+        DrunkIdeaComponent,
+        NotificationComponent
       ],
       imports: [
         FormsModule,
@@ -21,7 +24,8 @@ describe('App: DrunkPatents', () => {
         ])
       ],
       providers: [
-        IdeaService
+        IdeaService,
+        NotificationService
       ]
     });
   });

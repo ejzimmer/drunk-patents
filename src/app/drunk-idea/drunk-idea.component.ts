@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeaService } from '../idea.service';
+import { NotificationService, NotificationType } from '../notification.service';
 
 @Component({
   selector: 'drunk-idea',
@@ -11,7 +12,7 @@ export class DrunkIdeaComponent implements OnInit {
   idea: string;
   id: number;
 
-  constructor(private ideaService: IdeaService) { }
+  constructor(private ideaService: IdeaService, private notificationService: NotificationService) { }
 
   ngOnInit() {
   }
@@ -24,5 +25,6 @@ export class DrunkIdeaComponent implements OnInit {
     this.saveIdea();
     this.id = undefined;
     this.idea = '';
+    this.notificationService.show(NotificationType.OK, 'Your idea has been saved successfully');
   }
 }

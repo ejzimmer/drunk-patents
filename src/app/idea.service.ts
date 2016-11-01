@@ -36,11 +36,9 @@ export class IdeaService {
 
 export class Idea {
 
-  id: number;
   text: string;
 
-  constructor(id: number, idea: string) {
-    this.id = id;
+  constructor(public id: number, idea: string) {
     this.text = idea;
   }
 }

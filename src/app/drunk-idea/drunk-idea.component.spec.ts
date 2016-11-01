@@ -2,14 +2,16 @@
 
 import { DrunkIdeaComponent } from './drunk-idea.component';
 import { IdeaService } from '../idea.service';
+import { NotificationService, NotificationType } from '../notification.service';
 
 describe('Component: DrunkIdea', () => {
 
   let component;
   const ideaService = new IdeaService();
+  const notificationService = new NotificationService();
 
   beforeEach(() => {
-    component = new DrunkIdeaComponent(ideaService);
+    component = new DrunkIdeaComponent(ideaService, notificationService);
   });
 
   it('should create an instance', () => {
@@ -47,5 +49,14 @@ describe('Component: DrunkIdea', () => {
     expect(ideaService.save).toHaveBeenCalledWith(idea, 1);
     expect(component.id).toBeFalsy();
     expect(component.idea).toBeFalsy();
+  });
+
+  it('should display a success message when an idea has been saved', () => {
+    spyOn(notificationService, 'show');
+    component.idea = 'Successfully saved idea';
+    component.finishIdea();
+
+    expect(notificationService.show)
+      .toHaveBeenCalledWith(NotificationType.OK, 'Your idea has been saved successfully');
   });
 });

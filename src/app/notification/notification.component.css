@@ -1,0 +1,36 @@
+button.close {
+  align-self: flex-start;
+  border-radius: 50px;
+  border: solid 1px transparent;
+  color: #fff;
+  cursor: pointer;
+  width: auto;
+}
+
+button.close.OK {
+  color: #64E664;
+  background-color: #3a853a;
+}
+
+div.notification {
+  border: solid 3px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.notification.OK {
+  background-color: #64E664;
+  border-color: #3a853a;
+}
+
+span.message:before {
+  margin: 5px;
+}
+
+span.message.OK:before {
+  content: '\2714';
+  color: #3a853a;
+}

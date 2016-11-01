@@ -8,12 +8,15 @@ import { AppComponent } from './app.component';
 import { DrunkIdeaComponent } from './drunk-idea/drunk-idea.component';
 import { IdeaService } from "./idea.service";
 import { SoberComponent } from './sober/sober.component';
+import {NotificationService} from "./notification.service";
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DrunkIdeaComponent,
-    SoberComponent
+    SoberComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { SoberComponent } from './sober/sober.component';
       { path: '**', component: DrunkIdeaComponent }
     ])
   ],
-  providers: [IdeaService],
+  providers: [IdeaService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
