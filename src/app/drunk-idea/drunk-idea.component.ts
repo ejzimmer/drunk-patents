@@ -9,6 +9,7 @@ import { IdeaService } from '../idea.service';
 export class DrunkIdeaComponent implements OnInit {
 
   idea: string;
+  id: number;
 
   constructor(private ideaService: IdeaService) { }
 
@@ -16,7 +17,12 @@ export class DrunkIdeaComponent implements OnInit {
   }
 
   saveIdea() {
-    this.ideaService.save(this.idea);
+    this.id = this.ideaService.save(this.idea, this.id);
   }
 
+  finishIdea() {
+    this.saveIdea();
+    this.id = undefined;
+    this.idea = '';
+  }
 }

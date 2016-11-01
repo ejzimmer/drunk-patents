@@ -3,17 +3,21 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class IdeaService {
 
-  constructor() { }
+  constructor() {}
 
-  save(idea: string) {
-    localStorage.setItem('drunk-patents', idea);
+  getLastId() {
+    return Object.keys(localStorage).map(key => Number.parseInt(key.replace('idea', '')))
+      .reduce((prev, current) => Math.max(prev, current), 0) || 0;
+  }
+
+  save(idea: string, id: number) {
+    id = id || this.getLastId() + 1;
+    const key = `idea${id}`;
+    localStorage.setItem(key, idea);
+    return id;
   }
 
   get() {
-    const ideas = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      ideas.push(localStorage.getItem(localStorage.key(i)));
-    }
-    return ideas;
+    return Object.keys(localStorage).map((key) => localStorage.getItem(key));
   }
 }
