@@ -14,7 +14,7 @@ export class NotificationService {
 }
 
 export enum NotificationType {
-  OK
+  OK, INFO
 }
 
 export class Notification {

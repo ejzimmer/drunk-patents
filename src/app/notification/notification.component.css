@@ -12,6 +12,11 @@ button.close.OK {
   background-color: #3a853a;
 }
 
+button.close.INFO {
+  color: #64A5E6;
+  background-color: #3A6085;
+}
+
 div.notification {
   border: solid 3px;
   border-radius: 5px;
@@ -26,6 +31,11 @@ div.notification.OK {
   border-color: #3a853a;
 }
 
+div.notification.INFO {
+  background-color: #64A5E6;
+  border-color: #3A6085;
+}
+
 span.message:before {
   margin: 5px;
 }
@@ -33,4 +43,9 @@ span.message:before {
 span.message.OK:before {
   content: '\2714';
   color: #3a853a;
+}
+
+span.message.INFO:before {
+  content: '\2139';
+  color: #3A6085;
 }

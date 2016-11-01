@@ -17,12 +17,15 @@ export class DrunkIdeaComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveIdea() {
+  saveIdea(autosave: boolean = true) {
     this.id = this.ideaService.save(this.idea, this.id);
+    if (autosave) {
+      this.notificationService.show(NotificationType.INFO, 'Autosaved');
+    }
   }
 
   finishIdea() {
-    this.saveIdea();
+    this.saveIdea(false);
     this.id = undefined;
     this.idea = '';
     this.notificationService.show(NotificationType.OK, 'Your idea has been saved successfully');
