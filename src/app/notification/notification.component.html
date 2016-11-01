@@ -1,4 +1,5 @@
-<div [ngClass]="['notification', getType(notification)]" *ngFor="let notification of notifications; let i = index">
+<div [ngClass]="['notification', getType(notification), getClosed(i)]"
+     *ngFor="let notification of notifications; let i = index">
   <span [ngClass]="['message', getType(notification)]">{{notification.message}}</span>
   <button [ngClass]="['close', getType(notification)]" aria-label="Close Notification" (click)="close(i)">X</button>
 </div>

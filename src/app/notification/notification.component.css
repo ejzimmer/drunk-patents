@@ -24,6 +24,11 @@ div.notification {
   padding: 3px;
   display: flex;
   justify-content: space-between;
+  transition: transform 1s;
+}
+
+div.closed {
+  transform: translateX(1000px);
 }
 
 div.notification.OK {

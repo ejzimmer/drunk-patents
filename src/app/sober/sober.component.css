@@ -9,6 +9,12 @@ li {
   padding: 5px;
   display: flex;
   justify-content: space-between;
+  transition: transform 1s, position 2s;
+}
+
+li.killed {
+  transform: translateX(1000px);
+  transform-origin: left;
 }
 
 button.delete {
@@ -20,3 +26,5 @@ button.delete {
   background-color: #3d8299;
   width: auto;
 }
+
+

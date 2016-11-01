@@ -3,9 +3,10 @@
   Make sure you're using the same device you were using to save your ideas.
 </div>
 <ul>
-  <li *ngFor="let text of ideas">
-    <span class="idea">{{text.text}}</span>
-    <button class="delete" aria-label="Delete" (click)="deleteIdea(text.id)">X</button>
+  <li *ngFor="let idea of ideas, let i = index" [ngClass]="{'killed': deleted[idea.id]}">
+    <span class="idea">{{idea.text}}</span>
+    <button class="delete" aria-label="Delete"
+            (click)="deleteIdea(idea.id)">X</button>
   </li>
 </ul>
 <a routerLink="/">Wait! I'm still drunk. I have more ideas!</a>

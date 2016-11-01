@@ -10,9 +10,11 @@ import { NotificationService } from '../notification.service';
 export class SoberComponent implements OnInit {
 
   ideas: Array<Idea>;
+  deleted: any;
 
   constructor(private ideaService: IdeaService, private notificationService: NotificationService) {
     this.ideas = ideaService.get();
+    this.deleted = {};
   }
 
   ngOnInit() {
@@ -20,6 +22,11 @@ export class SoberComponent implements OnInit {
   }
 
   deleteIdea(id: number) {
-    this.ideas = this.ideaService.delete(id);
+    this.deleted[id] = true;
+    setTimeout(() => {
+      this.ideas = this.ideaService.delete(id);
+      delete this.deleted[id];
+    }, 1000);
+
   }
 }
