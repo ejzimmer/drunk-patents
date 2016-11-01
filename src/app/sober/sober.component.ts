@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IdeaService } from '../idea.service';
+import { IdeaService, Idea } from '../idea.service';
 
 @Component({
   selector: 'drunk-sober',
@@ -8,7 +8,7 @@ import { IdeaService } from '../idea.service';
 })
 export class SoberComponent implements OnInit {
 
-  ideas: Array<string>;
+  ideas: Array<Idea>;
 
   constructor(private ideaService: IdeaService) {
     this.ideas = ideaService.get();
@@ -17,4 +17,7 @@ export class SoberComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteIdea(id: number) {
+    this.ideas = this.ideaService.delete(id);
+  }
 }

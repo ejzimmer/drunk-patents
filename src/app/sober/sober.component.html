@@ -1,3 +1,6 @@
 <ul>
-  <li *ngFor="let idea of ideas">{{idea}}</li>
+  <li *ngFor="let text of ideas">
+    <span class="idea">{{text.text}}</span>
+    <button class="delete" aria-label="Delete" (click)="deleteIdea(text.id)">X</button>
+  </li>
 </ul>
