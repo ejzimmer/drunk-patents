@@ -1,3 +1,6 @@
-<textarea [(ngModel)]="idea" placeholder="What's your text?" (change)="saveIdea()"></textarea>
-<button (click)="finishIdea()">SAVE MY IDEA</button>
+<form (ngSubmit)="finishIdea()">
+  <textarea name="idea" [(ngModel)]="idea" placeholder="What's your text?"
+            (change)="saveIdea()"></textarea>
+  <button type="submit" name="save">SAVE MY IDEA</button>
+</form>
 <a routerLink="/sober">I've sobered up! Show me my ideas.</a>
