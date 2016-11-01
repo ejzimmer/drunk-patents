@@ -1,3 +1,7 @@
+<div class="no-ideas" [hidden]="ideas.length">
+  You don't seem to have any ideas. Just how drunk were you?
+  Make sure you're using the same device you were using to save your ideas.
+</div>
 <ul>
   <li *ngFor="let text of ideas">
     <span class="idea">{{text.text}}</span>
