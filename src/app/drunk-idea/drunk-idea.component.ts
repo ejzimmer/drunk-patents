@@ -15,6 +15,7 @@ export class DrunkIdeaComponent implements OnInit {
   constructor(private ideaService: IdeaService, private notificationService: NotificationService) { }
 
   ngOnInit() {
+    this.notificationService.clearAll();
   }
 
   saveIdea(autosave: boolean = true) {

@@ -13,6 +13,12 @@ export class NotificationComponent implements OnInit {
   constructor(notificationService: NotificationService) {
     notificationService.notifications.asObservable()
       .subscribe((notification) => this.notifications.push(notification));
+    notificationService.clear.asObservable()
+      .subscribe((clear) => {
+        if (clear) {
+          this.notifications = [];
+        }
+      });
   }
 
   ngOnInit() {

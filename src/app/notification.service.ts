@@ -5,11 +5,16 @@ import { Subject } from 'rxjs';
 export class NotificationService {
 
   notifications: Subject<Notification> = new Subject<Notification>();
+  clear: Subject<boolean> = new Subject<boolean>();
 
   constructor() { }
 
   show(type: NotificationType, message: string) {
     this.notifications.next(new Notification(type, message));
+  }
+
+  clearAll() {
+    this.clear.next(true);
   }
 }
 
