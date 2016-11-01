@@ -1,0 +1,28 @@
+textarea, button {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 60vh;
+}
+
+button {
+  background: #f00;
+  border: 1px solid #000;
+  cursor: pointer;
+  color: transparent;
+  padding: 6px 15px;
+  margin: 5px 0;
+  text-shadow: 2px 0px 2px #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+a {
+  display: block;
+  margin-top: 20px;
+}
+
